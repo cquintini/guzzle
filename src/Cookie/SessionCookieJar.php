@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Cookie;
+namespace Guzzle6Http\Cookie;
 
 /**
  * Persists cookies in the client session

@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
 use Psr\Log\AbstractLogger;
 

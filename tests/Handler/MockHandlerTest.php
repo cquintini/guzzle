@@ -1,18 +1,18 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace Guzzle6Http\Test\Handler;
 
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Stream;
-use GuzzleHttp\TransferStats;
+use Guzzle6Http\Exception\BadResponseException;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\Handler\MockHandler;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\Psr7\Stream;
+use Guzzle6Http\TransferStats;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\MockHandler
+ * @covers \Guzzle6Http\Handler\MockHandler
  */
 class MockHandlerTest extends TestCase
 {

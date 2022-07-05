@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Guzzle6Http;
 
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Promise\PromiseInterface;
+use Guzzle6Http\Exception\GuzzleException;
+use Guzzle6Http\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -78,7 +78,7 @@ interface ClientInterface
      *
      * @return mixed
      *
-     * @deprecated ClientInterface::getConfig will be removed in guzzlehttp/guzzle:8.0.
+     * @deprecated ClientInterface::getConfig will be removed in Guzzle6Http/guzzle:8.0.
      */
     public function getConfig(?string $option = null);
 }

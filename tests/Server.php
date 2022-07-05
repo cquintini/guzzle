@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7;
+use Guzzle6Http\Client;
+use Guzzle6Http\Psr7;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -83,7 +83,7 @@ class Server
      * @param array       $headers      Array of headers to send in response
      * @param string|null $body         Body to send in response
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Guzzle6Http\Exception\GuzzleException
      */
     public static function enqueueRaw($statusCode, $reasonPhrase, $headers, $body)
     {

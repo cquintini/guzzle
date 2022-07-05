@@ -5,10 +5,10 @@ namespace {
     \error_reporting(\E_ALL);
 }
 
-namespace GuzzleHttp\Test {
+namespace Guzzle6Http\Test {
     require __DIR__ . '/../vendor/autoload.php';
     require __DIR__ . '/Server.php';
-    use GuzzleHttp\Tests\Server;
+    use Guzzle6Http\Tests\Server;
 
     Server::start();
     \register_shutdown_function(static function () {
@@ -17,7 +17,7 @@ namespace GuzzleHttp\Test {
 }
 
 // Override curl_setopt_array() and curl_multi_setopt() to get the last set curl options
-namespace GuzzleHttp\Handler {
+namespace Guzzle6Http\Handler {
     function curl_setopt_array($handle, array $options)
     {
         if (!empty($_SERVER['curl_test'])) {

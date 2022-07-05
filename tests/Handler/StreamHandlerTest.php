@@ -1,23 +1,23 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace Guzzle6Http\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler\StreamHandler;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\RequestOptions;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\TransferStats;
-use GuzzleHttp\Utils;
+use Guzzle6Http\Exception\ConnectException;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\Handler\StreamHandler;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Psr7\FnStream;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\RequestOptions;
+use Guzzle6Http\Tests\Server;
+use Guzzle6Http\TransferStats;
+use Guzzle6Http\Utils;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @covers \GuzzleHttp\Handler\StreamHandler
+ * @covers \Guzzle6Http\Handler\StreamHandler
  */
 class StreamHandlerTest extends TestCase
 {

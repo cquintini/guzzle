@@ -1,21 +1,21 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\BodySummarizer;
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Cookie\SetCookie;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\MessageFormatter;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use Guzzle6Http\BodySummarizer;
+use Guzzle6Http\Cookie\CookieJar;
+use Guzzle6Http\Cookie\SetCookie;
+use Guzzle6Http\Exception\ClientException;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\Exception\ServerException;
+use Guzzle6Http\Handler\MockHandler;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\MessageFormatter;
+use Guzzle6Http\Middleware;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Promise\PromiseInterface;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

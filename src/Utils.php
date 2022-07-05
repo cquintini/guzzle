@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Guzzle6Http;
 
-use GuzzleHttp\Exception\InvalidArgumentException;
-use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\Handler\CurlMultiHandler;
-use GuzzleHttp\Handler\Proxy;
-use GuzzleHttp\Handler\StreamHandler;
+use Guzzle6Http\Exception\InvalidArgumentException;
+use Guzzle6Http\Handler\CurlHandler;
+use Guzzle6Http\Handler\CurlMultiHandler;
+use Guzzle6Http\Handler\Proxy;
+use Guzzle6Http\Handler\StreamHandler;
 use Psr\Http\Message\UriInterface;
 
 final class Utils
@@ -71,7 +71,7 @@ final class Utils
             return \STDOUT;
         }
 
-        return \GuzzleHttp\Psr7\Utils::tryFopen('php://output', 'w');
+        return \Guzzle6Http\Psr7\Utils::tryFopen('php://output', 'w');
     }
 
     /**
@@ -81,7 +81,7 @@ final class Utils
      *
      * @throws \RuntimeException if no viable Handler is available.
      *
-     * @return callable(\Psr\Http\Message\RequestInterface, array): \GuzzleHttp\Promise\PromiseInterface Returns the best handler for the given system.
+     * @return callable(\Psr\Http\Message\RequestInterface, array): \Guzzle6Http\Promise\PromiseInterface Returns the best handler for the given system.
      */
     public static function chooseHandler(): callable
     {
@@ -99,7 +99,7 @@ final class Utils
                 ? Proxy::wrapStreaming($handler, new StreamHandler())
                 : new StreamHandler();
         } elseif (!$handler) {
-            throw new \RuntimeException('GuzzleHttp requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
+            throw new \RuntimeException('Guzzle6Http requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
         }
 
         return $handler;
@@ -110,7 +110,7 @@ final class Utils
      */
     public static function defaultUserAgent(): string
     {
-        return sprintf('GuzzleHttp/%d', ClientInterface::MAJOR_VERSION);
+        return sprintf('Guzzle6Http/%d', ClientInterface::MAJOR_VERSION);
     }
 
     /**
@@ -126,7 +126,7 @@ final class Utils
      *
      * @throws \RuntimeException if no bundle can be found.
      *
-     * @deprecated Utils::defaultCaBundle will be removed in guzzlehttp/guzzle:8.0. This method is not needed in PHP 5.6+.
+     * @deprecated Utils::defaultCaBundle will be removed in Guzzle6Http/guzzle:8.0. This method is not needed in PHP 5.6+.
      */
     public static function defaultCaBundle(): string
     {

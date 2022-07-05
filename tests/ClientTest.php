@@ -1,18 +1,18 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\RequestOptions;
+use Guzzle6Http\Client;
+use Guzzle6Http\Cookie\CookieJar;
+use Guzzle6Http\Handler\MockHandler;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\Middleware;
+use Guzzle6Http\Promise\PromiseInterface;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\Psr7\Uri;
+use Guzzle6Http\RequestOptions;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
@@ -210,7 +210,7 @@ class ClientTest extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+        $this->expectException(\Guzzle6Http\Exception\ClientException::class);
         $client->get('http://foo.com');
     }
 
@@ -221,7 +221,7 @@ class ClientTest extends TestCase
         $client = new Client(['handler' => $handler]);
 
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('cookies must be an instance of GuzzleHttp\\Cookie\\CookieJarInterface');
+        $this->expectExceptionMessage('cookies must be an instance of Guzzle6Http\\Cookie\\CookieJarInterface');
         $client->get('http://foo.com', ['cookies' => 'foo']);
     }
 
@@ -619,7 +619,7 @@ class ClientTest extends TestCase
         $client = new Client(['handler' => $mock]);
         $request = new Request('GET', 'http://foo.com');
 
-        $this->expectException(\GuzzleHttp\Exception\InvalidArgumentException::class);
+        $this->expectException(\Guzzle6Http\Exception\InvalidArgumentException::class);
         $client->send($request, ['headers'=>['X-Foo: Bar']]);
     }
 
@@ -629,7 +629,7 @@ class ClientTest extends TestCase
         $client = new Client(['handler' => $mock]);
         $request = new Request('GET', 'http://foo.com');
 
-        $this->expectException(\GuzzleHttp\Exception\InvalidArgumentException::class);
+        $this->expectException(\Guzzle6Http\Exception\InvalidArgumentException::class);
         $client->send($request, ['headers'=>['X-Foo: Bar', 'X-Test: Fail']]);
     }
 
@@ -784,7 +784,7 @@ class ClientTest extends TestCase
         $mockHandler = new MockHandler([new Response()]);
         $client = new Client(['handler' => $mockHandler]);
 
-        $this->expectException(\GuzzleHttp\Exception\InvalidArgumentException::class);
+        $this->expectException(\Guzzle6Http\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('IDN conversion failed');
         $client->request('GET', 'https://-яндекс.рф/images', ['idn_conversion' => true]);
     }

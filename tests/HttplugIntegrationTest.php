@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\Client;
+use Guzzle6Http\Client;
 use Http\Client\Tests\HttpClientTest;
 use Psr\Http\Client\ClientInterface;
 

@@ -1,21 +1,21 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\TooManyRedirectsException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\RedirectMiddleware;
+use Guzzle6Http\Client;
+use Guzzle6Http\Exception\BadResponseException;
+use Guzzle6Http\Exception\TooManyRedirectsException;
+use Guzzle6Http\Handler\MockHandler;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\Middleware;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\RedirectMiddleware;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers \GuzzleHttp\RedirectMiddleware
+ * @covers \Guzzle6Http\RedirectMiddleware
  */
 class RedirectMiddlewareTest extends TestCase
 {
@@ -113,7 +113,7 @@ class RedirectMiddlewareTest extends TestCase
         try {
             $promise->wait();
             self::fail();
-        } catch (\GuzzleHttp\Exception\TooManyRedirectsException $e) {
+        } catch (\Guzzle6Http\Exception\TooManyRedirectsException $e) {
             self::assertSame(302, $e->getResponse()->getStatusCode());
         }
     }

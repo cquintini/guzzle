@@ -11,7 +11,7 @@ All of the following examples use the following client:
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client(['base_uri' => 'http://httpbin.org']);
+    $client = new Guzzle6Http\Client(['base_uri' => 'http://httpbin.org']);
 
 
 .. _allow_redirects-option:
@@ -35,7 +35,7 @@ allow_redirects
             'track_redirects' => false
         ]
 
-:Constant: ``GuzzleHttp\RequestOptions::ALLOW_REDIRECTS``
+:Constant: ``Guzzle6Http\RequestOptions::ALLOW_REDIRECTS``
 
 Set to ``false`` to disable redirects.
 
@@ -116,13 +116,13 @@ pairs:
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::redirect`` middleware. This middleware is added
+    ``Guzzle6Http\Middleware::redirect`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\HandlerStack::create``.
+    default when creating a handler with ``Guzzle6Http\HandlerStack::create``.
 
 .. note::
 
-    This option has **no** effect when making requests using ``GuzzleHttp\Client::sendRequest()``. In order to stay compliant with PSR-18 any redirect response is returned as is.
+    This option has **no** effect when making requests using ``Guzzle6Http\Client::sendRequest()``. In order to stay compliant with PSR-18 any redirect response is returned as is.
 
 
 auth
@@ -137,7 +137,7 @@ auth
         - string
         - null
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::AUTH``
+:Constant: ``Guzzle6Http\RequestOptions::AUTH``
 
 The built-in authentication types are as follows:
 
@@ -191,7 +191,7 @@ body
     - ``fopen()`` resource
     - ``Psr\Http\Message\StreamInterface``
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::BODY``
+:Constant: ``Guzzle6Http\RequestOptions::BODY``
 
 This setting can be set to any of the following types:
 
@@ -207,7 +207,7 @@ This setting can be set to any of the following types:
   .. code-block:: php
 
       // You can send requests that use a stream resource as the body.
-      $resource = \GuzzleHttp\Psr7\Utils::tryFopen('http://httpbin.org', 'r');
+      $resource = \Guzzle6Http\Psr7\Utils::tryFopen('http://httpbin.org', 'r');
       $client->request('PUT', '/put', ['body' => $resource]);
 
 - ``Psr\Http\Message\StreamInterface``
@@ -215,7 +215,7 @@ This setting can be set to any of the following types:
   .. code-block:: php
 
       // You can send requests that use a Guzzle stream object as the body
-      $stream = GuzzleHttp\Psr7\Utils::streamFor('contents...');
+      $stream = Guzzle6Http\Psr7\Utils::streamFor('contents...');
       $client->request('POST', '/post', ['body' => $stream]);
 
 .. note::
@@ -237,7 +237,7 @@ cert
         - string
         - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::CERT``
+:Constant: ``Guzzle6Http\RequestOptions::CERT``
 
 .. code-block:: php
 
@@ -251,24 +251,24 @@ cookies
 
 :Summary: Specifies whether or not cookies are used in a request or what cookie
         jar to use or what cookies to send.
-:Types: ``GuzzleHttp\Cookie\CookieJarInterface``
+:Types: ``Guzzle6Http\Cookie\CookieJarInterface``
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::COOKIES``
+:Constant: ``Guzzle6Http\RequestOptions::COOKIES``
 
 You must specify the cookies option as a
-``GuzzleHttp\Cookie\CookieJarInterface`` or ``false``.
+``Guzzle6Http\Cookie\CookieJarInterface`` or ``false``.
 
 .. code-block:: php
 
-    $jar = new \GuzzleHttp\Cookie\CookieJar();
+    $jar = new \Guzzle6Http\Cookie\CookieJar();
     $client->request('GET', '/get', ['cookies' => $jar]);
 
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::cookies`` middleware. This middleware is added
+    ``Guzzle6Http\Middleware::cookies`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\HandlerStack::create``.
+    default when creating a handler with ``Guzzle6Http\HandlerStack::create``.
 
 .. tip::
 
@@ -285,7 +285,7 @@ connect_timeout
         to a server. Use ``0`` to wait indefinitely (the default behavior).
 :Types: float
 :Default: ``0``
-:Constant: ``GuzzleHttp\RequestOptions::CONNECT_TIMEOUT``
+:Constant: ``Guzzle6Http\RequestOptions::CONNECT_TIMEOUT``
 
 .. code-block:: php
 
@@ -314,7 +314,7 @@ debug
         - bool
         - ``fopen()`` resource
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::DEBUG``
+:Constant: ``Guzzle6Http\RequestOptions::DEBUG``
 
 .. code-block:: php
 
@@ -352,7 +352,7 @@ decode_content
         - string
         - bool
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::DECODE_CONTENT``
+:Constant: ``Guzzle6Http\RequestOptions::DECODE_CONTENT``
 
 This option can be used to control how content-encoded response bodies are
 handled. By default, ``decode_content`` is set to true, meaning any gzipped
@@ -389,7 +389,7 @@ delay
     - integer
     - float
 :Default: null
-:Constant: ``GuzzleHttp\RequestOptions::DELAY``
+:Constant: ``Guzzle6Http\RequestOptions::DELAY``
 
 
 .. _expect-option:
@@ -402,7 +402,7 @@ expect
     - bool
     - integer
 :Default: ``1048576``
-:Constant: ``GuzzleHttp\RequestOptions::EXPECT``
+:Constant: ``Guzzle6Http\RequestOptions::EXPECT``
 
 Set to ``true`` to enable the "Expect: 100-Continue" header for all requests
 that sends a body. Set to ``false`` to disable the "Expect: 100-Continue"
@@ -428,7 +428,7 @@ force_ip_resolve
 :Summary: Set to "v4" if you want the HTTP handlers to use only ipv4 protocol or "v6" for ipv6 protocol.
 :Types: string
 :Default: null
-:Constant: ``GuzzleHttp\RequestOptions::FORCE_IP_RESOLVE``
+:Constant: ``Guzzle6Http\RequestOptions::FORCE_IP_RESOLVE``
 
 .. code-block:: php
 
@@ -450,7 +450,7 @@ form_params
 
 :Summary: Used to send an `application/x-www-form-urlencoded` POST request.
 :Types: array
-:Constant: ``GuzzleHttp\RequestOptions::FORM_PARAMS``
+:Constant: ``Guzzle6Http\RequestOptions::FORM_PARAMS``
 
 Associative array of form field names to values where each value is a string or
 array of strings. Sets the Content-Type header to
@@ -483,7 +483,7 @@ headers
     representing the header field values.
 :Types: array
 :Defaults: None
-:Constant: ``GuzzleHttp\RequestOptions::HEADERS``
+:Constant: ``Guzzle6Http\RequestOptions::HEADERS``
 
 .. code-block:: php
 
@@ -504,7 +504,7 @@ created by the client (e.g., ``request()`` and ``requestAsync()``).
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client(['headers' => ['X-Foo' => 'Bar']]);
+    $client = new Guzzle6Http\Client(['headers' => ['X-Foo' => 'Bar']]);
 
     // Will send a request with the X-Foo header.
     $client->request('GET', '/get');
@@ -517,13 +517,13 @@ created by the client (e.g., ``request()`` and ``requestAsync()``).
     $client->request('GET', '/get', ['headers' => null]);
 
     // Will not overwrite the X-Foo header because it is in the message.
-    use GuzzleHttp\Psr7\Request;
+    use Guzzle6Http\Psr7\Request;
     $request = new Request('GET', 'http://foo.com', ['X-Foo' => 'test']);
     $client->send($request);
 
     // Will overwrite the X-Foo header with the request option provided in the
     // send method.
-    use GuzzleHttp\Psr7\Request;
+    use Guzzle6Http\Psr7\Request;
     $request = new Request('GET', 'http://foo.com', ['X-Foo' => 'test']);
     $client->send($request, ['headers' => ['X-Foo' => 'overwrite']]);
 
@@ -538,12 +538,12 @@ http_errors
     HTTP protocol errors are encountered.
 :Types: bool
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::HTTP_ERRORS``
+:Constant: ``Guzzle6Http\RequestOptions::HTTP_ERRORS``
 
 .. code-block:: php
 
     $client->request('GET', '/status/500');
-    // Throws a GuzzleHttp\Exception\ServerException
+    // Throws a Guzzle6Http\Exception\ServerException
 
     $res = $client->request('GET', '/status/500', ['http_errors' => false]);
     echo $res->getStatusCode();
@@ -552,9 +552,9 @@ http_errors
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::httpErrors`` middleware. This middleware is added
+    ``Guzzle6Http\Middleware::httpErrors`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\HandlerStack::create``.
+    default when creating a handler with ``Guzzle6Http\HandlerStack::create``.
 
 
 idn_conversion
@@ -566,7 +566,7 @@ idn_conversion
     - bool
     - int
 :Default: ``true`` if ``intl`` extension is available (and ICU library is 4.6+ for PHP 7.2+), ``false`` otherwise
-:Constant: ``GuzzleHttp\RequestOptions::IDN_CONVERSION``
+:Constant: ``Guzzle6Http\RequestOptions::IDN_CONVERSION``
 
 .. code-block:: php
 
@@ -591,7 +591,7 @@ json
 :Types:
     Any PHP type that can be operated on by PHP's ``json_encode()`` function.
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::JSON``
+:Constant: ``Guzzle6Http\RequestOptions::JSON``
 
 .. code-block:: php
 
@@ -602,7 +602,7 @@ over the wire.
 
 .. code-block:: php
 
-    use GuzzleHttp\Middleware;
+    use Guzzle6Http\Middleware;
 
     // Create a middleware that echoes parts of the request.
     $tapMiddleware = Middleware::tap(function ($request) {
@@ -636,7 +636,7 @@ multipart
 
 :Summary: Sets the body of the request to a `multipart/form-data` form.
 :Types: array
-:Constant: ``GuzzleHttp\RequestOptions::MULTIPART``
+:Constant: ``Guzzle6Http\RequestOptions::MULTIPART``
 
 The value of ``multipart`` is an array of associative arrays, each containing
 the following key value pairs:
@@ -650,7 +650,7 @@ the following key value pairs:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use Guzzle6Http\Psr7;
 
     $client->request('POST', '/post', [
         'multipart' => [
@@ -688,11 +688,11 @@ on_headers
 :Summary: A callable that is invoked when the HTTP headers of the response have
     been received but the body has not yet begun to download.
 :Types: - callable
-:Constant: ``GuzzleHttp\RequestOptions::ON_HEADERS``
+:Constant: ``Guzzle6Http\RequestOptions::ON_HEADERS``
 
 The callable accepts a ``Psr\Http\Message\ResponseInterface`` object. If an exception
 is thrown by the callable, then the promise associated with the response will
-be rejected with a ``GuzzleHttp\Exception\RequestException`` that wraps the
+be rejected with a ``Guzzle6Http\Exception\RequestException`` that wraps the
 exception that was thrown.
 
 You may need to know what headers and status codes were received before data
@@ -728,15 +728,15 @@ on_stats
     error encountered. Included in the data is the total amount of time taken
     to send the request.
 :Types: - callable
-:Constant: ``GuzzleHttp\RequestOptions::ON_STATS``
+:Constant: ``Guzzle6Http\RequestOptions::ON_STATS``
 
-The callable accepts a ``GuzzleHttp\TransferStats`` object.
+The callable accepts a ``Guzzle6Http\TransferStats`` object.
 
 .. code-block:: php
 
-    use GuzzleHttp\TransferStats;
+    use Guzzle6Http\TransferStats;
 
-    $client = new GuzzleHttp\Client();
+    $client = new Guzzle6Http\Client();
 
     $client->request('GET', 'http://httpbin.org/stream/1024', [
         'on_stats' => function (TransferStats $stats) {
@@ -764,7 +764,7 @@ progress
 :Summary: Defines a function to invoke when transfer progress is made.
 :Types: - callable
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::PROGRESS``
+:Constant: ``Guzzle6Http\RequestOptions::PROGRESS``
 
 The function accepts the following positional arguments:
 
@@ -803,7 +803,7 @@ proxy
     - string
     - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::PROXY``
+:Constant: ``Guzzle6Http\RequestOptions::PROXY``
 
 Pass a string to specify a proxy for all protocols.
 
@@ -848,7 +848,7 @@ query
     - array
     - string
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::QUERY``
+:Constant: ``Guzzle6Http\RequestOptions::QUERY``
 
 .. code-block:: php
 
@@ -869,7 +869,7 @@ read_timeout
 :Summary: Float describing the timeout to use when reading a streamed body
 :Types: float
 :Default: Defaults to the value of the ``default_socket_timeout`` PHP ini setting
-:Constant: ``GuzzleHttp\RequestOptions::READ_TIMEOUT``
+:Constant: ``Guzzle6Http\RequestOptions::READ_TIMEOUT``
 
 The timeout applies to individual read operations on a streamed body (when the ``stream`` option is enabled).
 
@@ -900,7 +900,7 @@ sink
     - ``Psr\Http\Message\StreamInterface``
 
 :Default: PHP temp stream
-:Constant: ``GuzzleHttp\RequestOptions::SINK``
+:Constant: ``Guzzle6Http\RequestOptions::SINK``
 
 Pass a string to specify the path to a file that will store the contents of the
 response body:
@@ -913,7 +913,7 @@ Pass a resource returned from ``fopen()`` to write the response to a PHP stream:
 
 .. code-block:: php
 
-    $resource = \GuzzleHttp\Psr7\Utils::tryFopen('/path/to/file', 'w');
+    $resource = \Guzzle6Http\Psr7\Utils::tryFopen('/path/to/file', 'w');
     $client->request('GET', '/stream/20', ['sink' => $resource]);
 
 Pass a ``Psr\Http\Message\StreamInterface`` object to stream the response
@@ -921,8 +921,8 @@ body to an open PSR-7 stream.
 
 .. code-block:: php
 
-    $resource = \GuzzleHttp\Psr7\Utils::tryFopen('/path/to/file', 'w');
-    $stream = \GuzzleHttp\Psr7\Utils::streamFor($resource);
+    $resource = \Guzzle6Http\Psr7\Utils::tryFopen('/path/to/file', 'w');
+    $stream = \Guzzle6Http\Psr7\Utils::streamFor($resource);
     $client->request('GET', '/stream/20', ['save_to' => $stream]);
 
 .. note::
@@ -945,7 +945,7 @@ ssl_key
         - string
         - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::SSL_KEY``
+:Constant: ``Guzzle6Http\RequestOptions::SSL_KEY``
 
 .. note::
 
@@ -963,7 +963,7 @@ stream
     up-front.
 :Types: bool
 :Default: ``false``
-:Constant: ``GuzzleHttp\RequestOptions::STREAM``
+:Constant: ``Guzzle6Http\RequestOptions::STREAM``
 
 .. code-block:: php
 
@@ -989,7 +989,7 @@ synchronous
     response. This can be useful for optimizations.
 :Types: bool
 :Default: none
-:Constant: ``GuzzleHttp\RequestOptions::SYNCHRONOUS``
+:Constant: ``Guzzle6Http\RequestOptions::SYNCHRONOUS``
 
 
 .. _verify-option:
@@ -1008,7 +1008,7 @@ verify
     - bool
     - string
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::VERIFY``
+:Constant: ``Guzzle6Http\RequestOptions::VERIFY``
 
 .. code-block:: php
 
@@ -1040,13 +1040,13 @@ timeout
         to wait indefinitely (the default behavior).
 :Types: float
 :Default: ``0``
-:Constant: ``GuzzleHttp\RequestOptions::TIMEOUT``
+:Constant: ``Guzzle6Http\RequestOptions::TIMEOUT``
 
 .. code-block:: php
 
     // Timeout if a server does not return a response in 3.14 seconds.
     $client->request('GET', '/delay/5', ['timeout' => 3.14]);
-    // PHP Fatal error:  Uncaught exception 'GuzzleHttp\Exception\TransferException'
+    // PHP Fatal error:  Uncaught exception 'Guzzle6Http\Exception\TransferException'
 
 
 .. _version-option:
@@ -1057,7 +1057,7 @@ version
 :Summary: Protocol version to use with the request.
 :Types: string, float
 :Default: ``1.1``
-:Constant: ``GuzzleHttp\RequestOptions::VERSION``
+:Constant: ``Guzzle6Http\RequestOptions::VERSION``
 
 .. code-block:: php
 

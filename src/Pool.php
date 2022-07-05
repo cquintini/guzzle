@@ -1,11 +1,11 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Guzzle6Http;
 
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\EachPromise;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Promise\PromisorInterface;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Promise\EachPromise;
+use Guzzle6Http\Promise\PromiseInterface;
+use Guzzle6Http\Promise\PromisorInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -86,7 +86,7 @@ class Pool implements PromisorInterface
      * @param ClientInterface $client   Client used to send the requests
      * @param array|\Iterator $requests Requests to send concurrently.
      * @param array           $options  Passes through the options available in
-     *                                  {@see \GuzzleHttp\Pool::__construct}
+     *                                  {@see \Guzzle6Http\Pool::__construct}
      *
      * @return array Returns an array containing the response or an exception
      *               in the same order that the requests were sent.

@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Guzzle6Http;
 
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\InvalidArgumentException;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\PromiseInterface;
+use Guzzle6Http\Cookie\CookieJar;
+use Guzzle6Http\Exception\GuzzleException;
+use Guzzle6Http\Exception\InvalidArgumentException;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -41,7 +41,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      * - handler: (callable) Function that transfers HTTP requests over the
      *   wire. The function is called with a Psr7\Http\Message\RequestInterface
      *   and array of transfer options, and must return a
-     *   GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
+     *   Guzzle6Http\Promise\PromiseInterface that is fulfilled with a
      *   Psr7\Http\Message\ResponseInterface on success.
      *   If no handler is provided, a default handler will be created
      *   that enables all of the request options below by attaching all of the
@@ -52,7 +52,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @param array $config Client configuration settings.
      *
-     * @see \GuzzleHttp\RequestOptions for a list of available request options.
+     * @see \Guzzle6Http\RequestOptions for a list of available request options.
      */
     public function __construct(array $config = [])
     {
@@ -76,7 +76,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @return PromiseInterface|ResponseInterface
      *
-     * @deprecated Client::__call will be removed in guzzlehttp/guzzle:8.0.
+     * @deprecated Client::__call will be removed in Guzzle6Http/guzzle:8.0.
      */
     public function __call($method, $args)
     {
@@ -96,7 +96,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      * Asynchronously send an HTTP request.
      *
      * @param array $options Request options to apply to the given
-     *                       request and to the transfer. See \GuzzleHttp\RequestOptions.
+     *                       request and to the transfer. See \Guzzle6Http\RequestOptions.
      */
     public function sendAsync(RequestInterface $request, array $options = []): PromiseInterface
     {
@@ -113,7 +113,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      * Send an HTTP request.
      *
      * @param array $options Request options to apply to the given
-     *                       request and to the transfer. See \GuzzleHttp\RequestOptions.
+     *                       request and to the transfer. See \Guzzle6Http\RequestOptions.
      *
      * @throws GuzzleException
      */
@@ -147,7 +147,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @param string              $method  HTTP method
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply. See \GuzzleHttp\RequestOptions.
+     * @param array               $options Request options to apply. See \Guzzle6Http\RequestOptions.
      */
     public function requestAsync(string $method, $uri = '', array $options = []): PromiseInterface
     {
@@ -177,7 +177,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @param string              $method  HTTP method.
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply. See \GuzzleHttp\RequestOptions.
+     * @param array               $options Request options to apply. See \Guzzle6Http\RequestOptions.
      *
      * @throws GuzzleException
      */
@@ -198,7 +198,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      *
      * @return mixed
      *
-     * @deprecated Client::getConfig will be removed in guzzlehttp/guzzle:8.0.
+     * @deprecated Client::getConfig will be removed in Guzzle6Http/guzzle:8.0.
      */
     public function getConfig(?string $option = null)
     {
@@ -319,7 +319,7 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
      * The URI of the request is not modified and the request options are used
      * as-is without merging in default options.
      *
-     * @param array $options See \GuzzleHttp\RequestOptions.
+     * @param array $options See \Guzzle6Http\RequestOptions.
      */
     private function transfer(RequestInterface $request, array $options): PromiseInterface
     {

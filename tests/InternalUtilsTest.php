@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Test;
+namespace Guzzle6Http\Test;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Utils;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Utils;
 use PHPUnit\Framework\TestCase;
 
 class InternalUtilsTest extends TestCase

@@ -1,16 +1,16 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler\Network;
+namespace Guzzle6Http\Test\Handler\Network;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\StreamHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use Guzzle6Http\Client;
+use Guzzle6Http\Handler\StreamHandler;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\RequestOptions;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\StreamHandler
+ * @covers \Guzzle6Http\Handler\StreamHandler
  */
 class StreamHandlerTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace Guzzle6Http\Test\Handler;
 
-use GuzzleHttp\Handler\EasyHandle;
+use Guzzle6Http\Handler\EasyHandle;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\EasyHandle
+ * @covers \Guzzle6Http\Handler\EasyHandle
  */
 class EasyHandleTest extends TestCase
 {

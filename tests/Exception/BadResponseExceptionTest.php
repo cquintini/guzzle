@@ -1,10 +1,10 @@
 <?php
 
-namespace GuzzleHttp\Tests\Exception;
+namespace Guzzle6Http\Tests\Exception;
 
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use Guzzle6Http\Exception\BadResponseException;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 class BadResponseExceptionTest extends TestCase

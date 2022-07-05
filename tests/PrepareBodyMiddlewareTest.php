@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace Guzzle6Http\Tests;
 
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use Guzzle6Http\Handler\MockHandler;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\Middleware;
+use Guzzle6Http\Promise\PromiseInterface;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Psr7\FnStream;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 

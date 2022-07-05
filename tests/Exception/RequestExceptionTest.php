@@ -1,19 +1,19 @@
 <?php
 
-namespace GuzzleHttp\Tests\Exception;
+namespace Guzzle6Http\Tests\Exception;
 
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Stream;
+use Guzzle6Http\Exception\ClientException;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\Exception\ServerException;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\Psr7\Stream;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Client\RequestExceptionInterface;
 
 /**
- * @covers \GuzzleHttp\Exception\RequestException
+ * @covers \Guzzle6Http\Exception\RequestException
  */
 class RequestExceptionTest extends TestCase
 {

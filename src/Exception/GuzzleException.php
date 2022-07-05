@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Exception;
+namespace Guzzle6Http\Exception;
 
 use Psr\Http\Client\ClientExceptionInterface;
 

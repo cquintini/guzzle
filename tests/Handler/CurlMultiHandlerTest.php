@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests\Handler;
+namespace Guzzle6Http\Tests\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Handler\CurlMultiHandler;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Tests\Helpers;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\Utils;
+use Guzzle6Http\Exception\ConnectException;
+use Guzzle6Http\Handler\CurlMultiHandler;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\Tests\Helpers;
+use Guzzle6Http\Tests\Server;
+use Guzzle6Http\Utils;
 use PHPUnit\Framework\TestCase;
 
 class CurlMultiHandlerTest extends TestCase

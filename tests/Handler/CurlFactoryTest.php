@@ -1,22 +1,22 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace Guzzle6Http\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler;
-use GuzzleHttp\Handler\CurlFactory;
-use GuzzleHttp\Handler\EasyHandle;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Tests\Helpers;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\TransferStats;
+use Guzzle6Http\Exception\ConnectException;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\Handler;
+use Guzzle6Http\Handler\CurlFactory;
+use Guzzle6Http\Handler\EasyHandle;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Tests\Helpers;
+use Guzzle6Http\Tests\Server;
+use Guzzle6Http\TransferStats;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @covers \GuzzleHttp\Handler\CurlFactory
+ * @covers \Guzzle6Http\Handler\CurlFactory
  */
 class CurlFactoryTest extends TestCase
 {
@@ -692,7 +692,7 @@ class CurlFactoryTest extends TestCase
         $handler = new Handler\CurlHandler();
         $promise = $handler($req, []);
 
-        $this->expectException(\GuzzleHttp\Exception\RequestException::class);
+        $this->expectException(\Guzzle6Http\Exception\RequestException::class);
         $this->expectExceptionMessage('An error was encountered while creating the response');
         $promise->wait();
     }

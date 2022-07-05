@@ -58,7 +58,7 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 
 - Support for DER and P12 certificates [#2413](https://github.com/guzzle/guzzle/pull/2413)
 - Support the cURL (http://) scheme for StreamHandler proxies [#2850](https://github.com/guzzle/guzzle/pull/2850)
-- Support for `guzzlehttp/psr7:^2.0` [#2878](https://github.com/guzzle/guzzle/pull/2878)
+- Support for `Guzzle6Http/psr7:^2.0` [#2878](https://github.com/guzzle/guzzle/pull/2878)
 
 ### Fixed
 
@@ -101,7 +101,7 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 
 ### Added
 
-- `GuzzleHttp\MessageFormatterInterface`
+- `Guzzle6Http\MessageFormatterInterface`
 
 ### Fixed
 
@@ -112,7 +112,7 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 
 ### Deprecated
 
-- All functions in `GuzzleHttp` has been deprecated. Use static methods on `Utils` instead.
+- All functions in `Guzzle6Http` has been deprecated. Use static methods on `Utils` instead.
 - `ClientInterface::getConfig()`
 - `Client::getConfig()`
 - `Client::__call()`
@@ -138,7 +138,7 @@ No changes since 7.0.0-rc1.
 
 ### Added
 
-* Using `Utils` class instead of functions in the `GuzzleHttp` namespace. [#2546](https://github.com/guzzle/guzzle/pull/2546)
+* Using `Utils` class instead of functions in the `Guzzle6Http` namespace. [#2546](https://github.com/guzzle/guzzle/pull/2546)
 * `ClientInterface::MAJOR_VERSION` [#2583](https://github.com/guzzle/guzzle/pull/2583)
 
 ### Changed
@@ -149,7 +149,7 @@ No changes since 7.0.0-rc1.
 * Use Symfony intl-idn polyfill [#2550](https://github.com/guzzle/guzzle/pull/2550)
 * Adding methods for HTTP verbs like `Client::get()`, `Client::head()`, `Client::patch()` etc [#2529](https://github.com/guzzle/guzzle/pull/2529)
 * `ConnectException` extends `TransferException` [#2541](https://github.com/guzzle/guzzle/pull/2541)
-* Updated the default User Agent to "GuzzleHttp/7" [#2654](https://github.com/guzzle/guzzle/pull/2654)
+* Updated the default User Agent to "Guzzle6Http/7" [#2654](https://github.com/guzzle/guzzle/pull/2654)
 
 ### Fixed
 
@@ -220,8 +220,8 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Improvement: Improved error messages when using curl < 7.21.2 [#2108](https://github.com/guzzle/guzzle/pull/2108)
 * Fix: Test if response is readable before returning a summary in `RequestException::getResponseBodySummary()` [#2081](https://github.com/guzzle/guzzle/pull/2081)
 * Fix: Add support for GUZZLE_CURL_SELECT_TIMEOUT environment variable [#2161](https://github.com/guzzle/guzzle/pull/2161)
-* Improvement: Added `GuzzleHttp\Exception\InvalidArgumentException` [#2163](https://github.com/guzzle/guzzle/pull/2163)
-* Improvement: Added `GuzzleHttp\_current_time()` to use `hrtime()` if that function exists. [#2242](https://github.com/guzzle/guzzle/pull/2242)
+* Improvement: Added `Guzzle6Http\Exception\InvalidArgumentException` [#2163](https://github.com/guzzle/guzzle/pull/2163)
+* Improvement: Added `Guzzle6Http\_current_time()` to use `hrtime()` if that function exists. [#2242](https://github.com/guzzle/guzzle/pull/2242)
 * Improvement: Added curl's `appconnect_time` in `TransferStats` [#2284](https://github.com/guzzle/guzzle/pull/2284)
 * Improvement: Make GuzzleException extend Throwable wherever it's available [#2273](https://github.com/guzzle/guzzle/pull/2273)
 * Fix: Prevent concurrent writes to file when saving `CookieJar` [#2335](https://github.com/guzzle/guzzle/pull/2335)
@@ -266,7 +266,7 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Improvement: Always include the Content-Length if there's a body [#1721](https://github.com/guzzle/guzzle/pull/1721)
 * Feature: Added convenience method to access a cookie by name [#1318](https://github.com/guzzle/guzzle/pull/1318)
 * Bug fix: Fill `CURLOPT_CAPATH` and `CURLOPT_CAINFO` properly [#1684](https://github.com/guzzle/guzzle/pull/1684)
-* Improvement:  	Use `\GuzzleHttp\Promise\rejection_for` function instead of object init [#1827](https://github.com/guzzle/guzzle/pull/1827)
+* Improvement:  	Use `\Guzzle6Http\Promise\rejection_for` function instead of object init [#1827](https://github.com/guzzle/guzzle/pull/1827)
 
 
 + Minor code cleanups, documentation fixes and clarifications.
@@ -294,7 +294,7 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 
 ## 6.2.0 - 2016-03-21
 
-* Feature: added `GuzzleHttp\json_encode` and `GuzzleHttp\json_decode`.
+* Feature: added `Guzzle6Http\json_encode` and `Guzzle6Http\json_decode`.
   https://github.com/guzzle/guzzle/pull/1389
 * Bug fix: Fix sleep calculation when waiting for delayed requests.
   https://github.com/guzzle/guzzle/pull/1324
@@ -404,10 +404,10 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Ensuring that `sink` is valid if saving to a file.
 * Request exceptions now include a "handler context" which provides handler
   specific contextual information.
-* Added `GuzzleHttp\RequestOptions` to allow request options to be applied
+* Added `Guzzle6Http\RequestOptions` to allow request options to be applied
   using constants.
 * `$maxHandles` has been removed from CurlMultiHandler.
-* `MultipartPostBody` is now part of the `guzzlehttp/psr7` package.
+* `MultipartPostBody` is now part of the `Guzzle6Http/psr7` package.
 
 ## 5.3.0 - 2015-05-19
 
@@ -416,7 +416,7 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Fixed a bug in which multiple headers using different casing would overwrite
   previous headers in the associative array.
 * Added `Utils::getDefaultHandler()`
-* Marked `GuzzleHttp\Client::getDefaultUserAgent` as deprecated.
+* Marked `Guzzle6Http\Client::getDefaultUserAgent` as deprecated.
 * URL scheme is now always lowercased.
 
 ## 6.0.0-beta.1
@@ -426,21 +426,21 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
   * Requires immutable messages, which basically means an event based system
     owned by a request instance is no longer possible.
   * Utilizing the [Guzzle PSR-7 package](https://github.com/guzzle/psr7).
-  * Removed the dependency on `guzzlehttp/streams`. These stream abstractions
-    are available in the `guzzlehttp/psr7` package under the `GuzzleHttp\Psr7`
+  * Removed the dependency on `Guzzle6Http/streams`. These stream abstractions
+    are available in the `Guzzle6Http/psr7` package under the `Guzzle6Http\Psr7`
     namespace.
 * Added middleware and handler system
   * Replaced the Guzzle event and subscriber system with a middleware system.
   * No longer depends on RingPHP, but rather places the HTTP handlers directly
     in Guzzle, operating on PSR-7 messages.
-  * Retry logic is now encapsulated in `GuzzleHttp\Middleware::retry`, which
-    means the `guzzlehttp/retry-subscriber` is now obsolete.
-  * Mocking responses is now handled using `GuzzleHttp\Handler\MockHandler`.
+  * Retry logic is now encapsulated in `Guzzle6Http\Middleware::retry`, which
+    means the `Guzzle6Http/retry-subscriber` is now obsolete.
+  * Mocking responses is now handled using `Guzzle6Http\Handler\MockHandler`.
 * Asynchronous responses
   * No longer supports the `future` request option to send an async request.
     Instead, use one of the `*Async` methods of a client (e.g., `requestAsync`,
     `getAsync`, etc.).
-  * Utilizing `GuzzleHttp\Promise` instead of React's promise library to avoid
+  * Utilizing `Guzzle6Http\Promise` instead of React's promise library to avoid
     recursion required by chaining and forwarding react promises. See
     https://github.com/guzzle/promises
   * Added `requestAsync` and `sendAsync` to send request asynchronously.
@@ -449,7 +449,7 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Request options
   * POST and form updates
     * Added the `form_fields` and `form_files` request options.
-    * Removed the `GuzzleHttp\Post` namespace.
+    * Removed the `Guzzle6Http\Post` namespace.
     * The `body` request option no longer accepts an array for POST requests.
   * The `exceptions` request option has been deprecated in favor of the
     `http_errors` request options.
@@ -461,15 +461,15 @@ Please see [the upgrade document](UPGRADING.md) that describes all BC breaking c
 * Client methods `get()`, `post()`, `put()`, `patch()`, `options()`, etc. are
   now magic methods that will send synchronous requests.
 * Replaced `Utils.php` with plain functions in `functions.php`.
-* Removed `GuzzleHttp\Collection`.
-* Removed `GuzzleHttp\BatchResults`. Batched pool results are now returned as
+* Removed `Guzzle6Http\Collection`.
+* Removed `Guzzle6Http\BatchResults`. Batched pool results are now returned as
   an array.
-* Removed `GuzzleHttp\Query`. Query string handling is now handled using an
+* Removed `Guzzle6Http\Query`. Query string handling is now handled using an
   associative array passed into the `query` request option. The query string
   is serialized using PHP's `http_build_query`. If you need more control, you
   can pass the query string in as a string.
-* `GuzzleHttp\QueryParser` has been replaced with the
-  `GuzzleHttp\Psr7\parse_query`.
+* `Guzzle6Http\QueryParser` has been replaced with the
+  `Guzzle6Http\Psr7\parse_query`.
 
 ## 5.2.0 - 2015-01-27
 
@@ -519,7 +519,7 @@ object).
 
 * Added a trailing `\r\n` to multipart/form-data payloads. See
   https://github.com/guzzle/guzzle/pull/871
-* Added a `GuzzleHttp\Pool::send()` convenience method to match the docs.
+* Added a `Guzzle6Http\Pool::send()` convenience method to match the docs.
 * Status codes are now returned as integers. See
   https://github.com/guzzle/guzzle/issues/881
 * No longer overwriting an existing `application/x-www-form-urlencoded` header
@@ -553,17 +553,17 @@ Adding support for non-blocking responses and some minor API cleanup.
 
 ### New Features
 
-* Added support for non-blocking responses based on `guzzlehttp/guzzle-ring`.
+* Added support for non-blocking responses based on `Guzzle6Http/guzzle-ring`.
 * Added a public API for creating a default HTTP adapter.
 * Updated the redirect plugin to be non-blocking so that redirects are sent
   concurrently. Other plugins like this can now be updated to be non-blocking.
 * Added a "progress" event so that you can get upload and download progress
   events.
-* Added `GuzzleHttp\Pool` which implements FutureInterface and transfers
+* Added `Guzzle6Http\Pool` which implements FutureInterface and transfers
   requests concurrently using a capped pool size as efficiently as possible.
 * Added `hasListeners()` to EmitterInterface.
-* Removed `GuzzleHttp\ClientInterface::sendAll` and marked
-  `GuzzleHttp\Client::sendAll` as deprecated (it's still there, just not the
+* Removed `Guzzle6Http\ClientInterface::sendAll` and marked
+  `Guzzle6Http\Client::sendAll` as deprecated (it's still there, just not the
   recommended way).
 
 ### Breaking changes
@@ -573,28 +573,28 @@ look out for is that request and response objects no longer implement fluent
 interfaces.
 
 * Removed the fluent interfaces (i.e., `return $this`) from requests,
-  responses, `GuzzleHttp\Collection`, `GuzzleHttp\Url`,
-  `GuzzleHttp\Query`, `GuzzleHttp\Post\PostBody`, and
-  `GuzzleHttp\Cookie\SetCookie`. This blog post provides a good outline of
+  responses, `Guzzle6Http\Collection`, `Guzzle6Http\Url`,
+  `Guzzle6Http\Query`, `Guzzle6Http\Post\PostBody`, and
+  `Guzzle6Http\Cookie\SetCookie`. This blog post provides a good outline of
   why I did this: https://ocramius.github.io/blog/fluent-interfaces-are-evil/.
   This also makes the Guzzle message interfaces compatible with the current
   PSR-7 message proposal.
 * Removed "functions.php", so that Guzzle is truly PSR-4 compliant. Except
   for the HTTP request functions from function.php, these functions are now
-  implemented in `GuzzleHttp\Utils` using camelCase. `GuzzleHttp\json_decode`
-  moved to `GuzzleHttp\Utils::jsonDecode`. `GuzzleHttp\get_path` moved to
-  `GuzzleHttp\Utils::getPath`. `GuzzleHttp\set_path` moved to
-  `GuzzleHttp\Utils::setPath`. `GuzzleHttp\batch` should now be
-  `GuzzleHttp\Pool::batch`, which returns an `objectStorage`. Using functions.php
+  implemented in `Guzzle6Http\Utils` using camelCase. `Guzzle6Http\json_decode`
+  moved to `Guzzle6Http\Utils::jsonDecode`. `Guzzle6Http\get_path` moved to
+  `Guzzle6Http\Utils::getPath`. `Guzzle6Http\set_path` moved to
+  `Guzzle6Http\Utils::setPath`. `Guzzle6Http\batch` should now be
+  `Guzzle6Http\Pool::batch`, which returns an `objectStorage`. Using functions.php
   caused problems for many users: they aren't PSR-4 compliant, require an
   explicit include, and needed an if-guard to ensure that the functions are not
   declared multiple times.
 * Rewrote adapter layer.
-    * Removing all classes from `GuzzleHttp\Adapter`, these are now
-      implemented as callables that are stored in `GuzzleHttp\Ring\Client`.
+    * Removing all classes from `Guzzle6Http\Adapter`, these are now
+      implemented as callables that are stored in `Guzzle6Http\Ring\Client`.
     * Removed the concept of "parallel adapters". Sending requests serially or
       concurrently is now handled using a single adapter.
-    * Moved `GuzzleHttp\Adapter\Transaction` to `GuzzleHttp\Transaction`. The
+    * Moved `Guzzle6Http\Adapter\Transaction` to `Guzzle6Http\Transaction`. The
       Transaction object now exposes the request, response, and client as public
       properties. The getters and setters have been removed.
 * Removed the "headers" event. This event was only useful for changing the
@@ -605,11 +605,11 @@ interfaces.
   expectations, and if so, change the actual stream body that is being
   written to.
 * Removed the `asArray` parameter from
-  `GuzzleHttp\Message\MessageInterface::getHeader`. If you want to get a header
+  `Guzzle6Http\Message\MessageInterface::getHeader`. If you want to get a header
   value as an array, then use the newly added `getHeaderAsArray()` method of
   `MessageInterface`. This change makes the Guzzle interfaces compatible with
   the PSR-7 interfaces.
-* `GuzzleHttp\Message\MessageFactory` no longer allows subclasses to add
+* `Guzzle6Http\Message\MessageFactory` no longer allows subclasses to add
   custom request options using double-dispatch (this was an implementation
   detail). Instead, you should now provide an associative array to the
   constructor which is a mapping of the request option name mapping to a
@@ -618,13 +618,13 @@ interfaces.
   This control mechanism was used to stop a transfer of concurrent requests
   from completing. This can now be handled by throwing the exception or by
   cancelling a pool of requests or each outstanding future request individually.
-* Updated to "GuzzleHttp\Streams" 3.0.
-    * `GuzzleHttp\Stream\StreamInterface::getContents()` no longer accepts a
+* Updated to "Guzzle6Http\Streams" 3.0.
+    * `Guzzle6Http\Stream\StreamInterface::getContents()` no longer accepts a
       `maxLen` parameter. This update makes the Guzzle streams project
       compatible with the current PSR-7 proposal.
-    * `GuzzleHttp\Stream\Stream::__construct`,
-      `GuzzleHttp\Stream\Stream::factory`, and
-      `GuzzleHttp\Stream\Utils::create` no longer accept a size in the second
+    * `Guzzle6Http\Stream\Stream::__construct`,
+      `Guzzle6Http\Stream\Stream::factory`, and
+      `Guzzle6Http\Stream\Utils::create` no longer accept a size in the second
       argument. They now accept an associative array of options, including the
       "size" key and "metadata" key which can be used to provide custom metadata.
 
@@ -654,7 +654,7 @@ interfaces.
   Closes https://github.com/guzzle/guzzle/issues/764
 * Added the ability to throw an exception immediately when transferring
   requests in parallel. Closes https://github.com/guzzle/guzzle/issues/760
-* Updating guzzlehttp/streams dependency to ~2.1
+* Updating Guzzle6Http/streams dependency to ~2.1
 * No longer utilizing the now deprecated namespaced methods from the stream
   package.
 
@@ -730,13 +730,13 @@ interfaces.
 * Fixed an issue related to using custom message factory options in subclasses
 * Fixed an issue with nested form fields in a multi-part POST
 * Fixed an issue with using the `json` request option for POST requests
-* Added `ToArrayInterface` to `GuzzleHttp\Cookie\CookieJar`
+* Added `ToArrayInterface` to `Guzzle6Http\Cookie\CookieJar`
 
 ## 4.1.0 - 2014-05-27
 
 * Added a `json` request option to easily serialize JSON payloads.
-* Added a `GuzzleHttp\json_decode()` wrapper to safely parse JSON.
-* Added `setPort()` and `getPort()` to `GuzzleHttp\Message\RequestInterface`.
+* Added a `Guzzle6Http\json_decode()` wrapper to safely parse JSON.
+* Added `setPort()` and `getPort()` to `Guzzle6Http\Message\RequestInterface`.
 * Added the ability to provide an emitter to a client in the client constructor.
 * Added the ability to persist a cookie session using $_SESSION.
 * Added a trait that can be used to add event listeners to an iterator.
@@ -764,9 +764,9 @@ interfaces.
 
 * For information on changes and upgrading, see:
   https://github.com/guzzle/guzzle/blob/master/UPGRADING.md#3x-to-40
-* Added `GuzzleHttp\batch()` as a convenience function for sending requests in
+* Added `Guzzle6Http\batch()` as a convenience function for sending requests in
   parallel without needing to write asynchronous code.
-* Restructured how events are added to `GuzzleHttp\ClientInterface::sendAll()`.
+* Restructured how events are added to `Guzzle6Http\ClientInterface::sendAll()`.
   You can now pass a callable or an array of associative arrays where each
   associative array contains the "fn", "priority", and "once" keys.
 

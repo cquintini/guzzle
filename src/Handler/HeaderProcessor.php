@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Handler;
+namespace Guzzle6Http\Handler;
 
-use GuzzleHttp\Utils;
+use Guzzle6Http\Utils;
 
 /**
  * @internal

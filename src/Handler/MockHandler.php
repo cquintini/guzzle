@@ -1,13 +1,13 @@
 <?php
 
-namespace GuzzleHttp\Handler;
+namespace Guzzle6Http\Handler;
 
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\TransferStats;
-use GuzzleHttp\Utils;
+use Guzzle6Http\Exception\RequestException;
+use Guzzle6Http\HandlerStack;
+use Guzzle6Http\Promise as P;
+use Guzzle6Http\Promise\PromiseInterface;
+use Guzzle6Http\TransferStats;
+use Guzzle6Http\Utils;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;

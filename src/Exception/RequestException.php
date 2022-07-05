@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Exception;
+namespace Guzzle6Http\Exception;
 
-use GuzzleHttp\BodySummarizer;
-use GuzzleHttp\BodySummarizerInterface;
+use Guzzle6Http\BodySummarizer;
+use Guzzle6Http\BodySummarizerInterface;
 use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

@@ -61,7 +61,7 @@ parameters:
 			path: src/Handler/CurlFactory.php
 
 		-
-			message: "#^Property GuzzleHttp\\\\Handler\\\\CurlFactory\\:\\:\\$handles has unknown class CurlHandle as its type\\.$#"
+			message: "#^Property Guzzle6Http\\\\Handler\\\\CurlFactory\\:\\:\\$handles has unknown class CurlHandle as its type\\.$#"
 			count: 1
 			path: src/Handler/CurlFactory.php
 
@@ -106,12 +106,12 @@ parameters:
 			path: src/Handler/CurlMultiHandler.php
 
 		-
-			message: "#^Return typehint of method GuzzleHttp\\\\Handler\\\\CurlMultiHandler\\:\\:__get\\(\\) has invalid type CurlMultiHandle\\.$#"
+			message: "#^Return typehint of method Guzzle6Http\\\\Handler\\\\CurlMultiHandler\\:\\:__get\\(\\) has invalid type CurlMultiHandle\\.$#"
 			count: 1
 			path: src/Handler/CurlMultiHandler.php
 
 		-
-			message: "#^Property GuzzleHttp\\\\Handler\\\\EasyHandle\\:\\:\\$handle has unknown class CurlHandle as its type\\.$#"
+			message: "#^Property Guzzle6Http\\\\Handler\\\\EasyHandle\\:\\:\\$handle has unknown class CurlHandle as its type\\.$#"
 			count: 1
 			path: src/Handler/EasyHandle.php
 

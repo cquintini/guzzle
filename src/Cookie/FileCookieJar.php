@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Cookie;
+namespace Guzzle6Http\Cookie;
 
-use GuzzleHttp\Utils;
+use Guzzle6Http\Utils;
 
 /**
  * Persists non-session cookies using a JSON formatted file

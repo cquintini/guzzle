@@ -4,7 +4,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/guzzle/guzzle.svg?style=flat-square)](https://github.com/guzzle/guzzle/releases)
 [![Build Status](https://img.shields.io/github/workflow/status/guzzle/guzzle/CI?label=ci%20build&style=flat-square)](https://github.com/guzzle/guzzle/actions?query=workflow%3ACI)
-[![Total Downloads](https://img.shields.io/packagist/dt/guzzlehttp/guzzle.svg?style=flat-square)](https://packagist.org/packages/guzzlehttp/guzzle)
+[![Total Downloads](https://img.shields.io/packagist/dt/Guzzle6Http/guzzle.svg?style=flat-square)](https://packagist.org/packages/Guzzle6Http/guzzle)
 
 Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and
 trivial to integrate with web services.
@@ -22,7 +22,7 @@ trivial to integrate with web services.
 - Middleware system allows you to augment and compose client behavior.
 
 ```php
-$client = new \GuzzleHttp\Client();
+$client = new \Guzzle6Http\Client();
 $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
 
 echo $response->getStatusCode(); // 200
@@ -30,7 +30,7 @@ echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf
 echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
 
 // Send an asynchronous request.
-$request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+$request = new \Guzzle6Http\Psr7\Request('GET', 'http://httpbin.org');
 $promise = $client->sendAsync($request)->then(function ($response) {
     echo 'I completed! ' . $response->getBody();
 });
@@ -54,7 +54,7 @@ The recommended way to install Guzzle is through
 [Composer](https://getcomposer.org/).
 
 ```bash
-composer require guzzlehttp/guzzle
+composer require Guzzle6Http/guzzle
 ```
 
 
@@ -63,10 +63,10 @@ composer require guzzlehttp/guzzle
 | Version | Status         | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version  |
 |---------|----------------|---------------------|--------------|---------------------|---------------------|-------|--------------|
 | 3.x     | EOL            | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >=5.3.3,<7.0 |
-| 4.x     | EOL            | `guzzlehttp/guzzle` | `GuzzleHttp` | [v4][guzzle-4-repo] | N/A                 | No    | >=5.4,<7.0   |
-| 5.x     | EOL            | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >=5.4,<7.4   |
-| 6.x     | Security fixes | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >=5.5,<8.0   |
-| 7.x     | Latest         | `guzzlehttp/guzzle` | `GuzzleHttp` | [v7][guzzle-7-repo] | [v7][guzzle-7-docs] | Yes   | >=7.2.5,<8.2 |
+| 4.x     | EOL            | `Guzzle6Http/guzzle` | `Guzzle6Http` | [v4][guzzle-4-repo] | N/A                 | No    | >=5.4,<7.0   |
+| 5.x     | EOL            | `Guzzle6Http/guzzle` | `Guzzle6Http` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >=5.4,<7.4   |
+| 6.x     | Security fixes | `Guzzle6Http/guzzle` | `Guzzle6Http` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >=5.5,<8.0   |
+| 7.x     | Latest         | `Guzzle6Http/guzzle` | `Guzzle6Http` | [v7][guzzle-7-repo] | [v7][guzzle-7-docs] | Yes   | >=7.2.5,<8.2 |
 
 [guzzle-3-repo]: https://github.com/guzzle/guzzle3
 [guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x
@@ -91,4 +91,4 @@ Guzzle is made available under the MIT License (MIT). Please see [License File](
 
 Available as part of the Tidelift Subscription
 
-The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-guzzlehttp-guzzle?utm_source=packagist-guzzlehttp-guzzle&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+The maintainers of Guzzle and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-Guzzle6Http-guzzle?utm_source=packagist-Guzzle6Http-guzzle&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)

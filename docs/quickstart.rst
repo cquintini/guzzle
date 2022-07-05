@@ -10,7 +10,7 @@ page.
 Making a Request
 ================
 
-You can send requests with Guzzle using a ``GuzzleHttp\ClientInterface``
+You can send requests with Guzzle using a ``Guzzle6Http\ClientInterface``
 object.
 
 
@@ -19,7 +19,7 @@ Creating a Client
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
+    use Guzzle6Http\Client;
 
     $client = new Client([
         // Base URI is used with relative requests
@@ -42,7 +42,7 @@ The client constructor accepts an associative array of options:
     .. code-block:: php
 
         // Create a client with a base URI
-        $client = new GuzzleHttp\Client(['base_uri' => 'https://foo.com/api/']);
+        $client = new Guzzle6Http\Client(['base_uri' => 'https://foo.com/api/']);
         // Send a request to https://foo.com/api/test
         $response = $client->request('GET', 'test');
         // Send a request to https://foo.com/root
@@ -66,7 +66,7 @@ The client constructor accepts an associative array of options:
     (callable) Function that transfers HTTP requests over the wire. The
     function is called with a ``Psr7\Http\Message\RequestInterface`` and array
     of transfer options, and must return a
-    ``GuzzleHttp\Promise\PromiseInterface`` that is fulfilled with a
+    ``Guzzle6Http\Promise\PromiseInterface`` that is fulfilled with a
     ``Psr7\Http\Message\ResponseInterface`` on success.
 
 ``...``
@@ -94,7 +94,7 @@ ready:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7\Request;
+    use Guzzle6Http\Psr7\Request;
 
     $request = new Request('PUT', 'http://httpbin.org/put');
     $response = $client->send($request, ['timeout' => 2]);
@@ -127,7 +127,7 @@ You can also use the `sendAsync()` and `requestAsync()` methods of a client:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7\Request;
+    use Guzzle6Http\Psr7\Request;
 
     // Create a PSR-7 request object to send
     $headers = ['X-Foo' => 'Bar'];
@@ -148,7 +148,7 @@ rejected with an exception.
 .. code-block:: php
 
     use Psr\Http\Message\ResponseInterface;
-    use GuzzleHttp\Exception\RequestException;
+    use Guzzle6Http\Exception\RequestException;
 
     $promise = $client->requestAsync('GET', 'http://httpbin.org/get');
     $promise->then(
@@ -170,8 +170,8 @@ requests.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Promise;
+    use Guzzle6Http\Client;
+    use Guzzle6Http\Promise;
 
     $client = new Client(['base_uri' => 'http://httpbin.org/']);
 
@@ -199,16 +199,16 @@ requests.
     echo $responses['image']['value']->getHeader('Content-Length')[0];
     echo $responses['png']['value']->getHeader('Content-Length')[0];
 
-You can use the ``GuzzleHttp\Pool`` object when you have an indeterminate
+You can use the ``Guzzle6Http\Pool`` object when you have an indeterminate
 amount of requests you wish to send.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Exception\RequestException;
-    use GuzzleHttp\Pool;
-    use GuzzleHttp\Psr7\Request;
-    use GuzzleHttp\Psr7\Response;
+    use Guzzle6Http\Client;
+    use Guzzle6Http\Exception\RequestException;
+    use Guzzle6Http\Pool;
+    use Guzzle6Http\Psr7\Request;
+    use Guzzle6Http\Psr7\Response;
 
     $client = new Client();
 
@@ -342,7 +342,7 @@ resource returned from ``fopen``, or an instance of a
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use Guzzle6Http\Psr7;
 
     // Provide the body as a string.
     $r = $client->request('POST', 'http://httpbin.org/post', [
@@ -408,7 +408,7 @@ associative arrays, where each associative array contains the following keys:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use Guzzle6Http\Psr7;
 
     $response = $client->request('POST', 'http://httpbin.org/post', [
         'multipart' => [
@@ -437,12 +437,12 @@ Cookies
 
 Guzzle can maintain a cookie session for you if instructed using the
 ``cookies`` request option. When sending a request, the ``cookies`` option
-must be set to an instance of ``GuzzleHttp\Cookie\CookieJarInterface``.
+must be set to an instance of ``Guzzle6Http\Cookie\CookieJarInterface``.
 
 .. code-block:: php
 
     // Use a specific cookie jar
-    $jar = new \GuzzleHttp\Cookie\CookieJar;
+    $jar = new \Guzzle6Http\Cookie\CookieJar;
     $r = $client->request('GET', 'http://httpbin.org/cookies', [
         'cookies' => $jar
     ]);
@@ -453,16 +453,16 @@ to use a shared cookie jar for all requests.
 .. code-block:: php
 
     // Use a shared client cookie jar
-    $client = new \GuzzleHttp\Client(['cookies' => true]);
+    $client = new \Guzzle6Http\Client(['cookies' => true]);
     $r = $client->request('GET', 'http://httpbin.org/cookies');
 
-Different implementations exist for the ``GuzzleHttp\Cookie\CookieJarInterface``
+Different implementations exist for the ``Guzzle6Http\Cookie\CookieJarInterface``
 :
 
-- The ``GuzzleHttp\Cookie\CookieJar`` class stores cookies as an array.
-- The ``GuzzleHttp\Cookie\FileCookieJar`` class persists non-session cookies
+- The ``Guzzle6Http\Cookie\CookieJar`` class stores cookies as an array.
+- The ``Guzzle6Http\Cookie\FileCookieJar`` class persists non-session cookies
   using a JSON formatted file.
-- The ``GuzzleHttp\Cookie\SessionCookieJar`` class persists cookies in the
+- The ``Guzzle6Http\Cookie\SessionCookieJar`` class persists cookies in the
   client session.
 
 You can manually set cookies into a cookie jar with the named constructor
@@ -470,7 +470,7 @@ You can manually set cookies into a cookie jar with the named constructor
 
 .. code-block:: php
 
-    $jar = \GuzzleHttp\Cookie\CookieJar::fromArray(
+    $jar = \Guzzle6Http\Cookie\CookieJar::fromArray(
         [
             'some_cookie' => 'foo',
             'other_cookie' => 'barbaz1234'
@@ -479,7 +479,7 @@ You can manually set cookies into a cookie jar with the named constructor
     );
 
 You can get a cookie by its name with the ``getCookieByName($name)`` method
-which returns a ``GuzzleHttp\Cookie\SetCookie`` instance.
+which returns a ``Guzzle6Http\Cookie\SetCookie`` instance.
 
 .. code-block:: php
 
@@ -490,7 +490,7 @@ which returns a ``GuzzleHttp\Cookie\SetCookie`` instance.
     $cookie->getExpires(); // expiration date as a Unix timestamp
 
 The cookies can be also fetched into an array thanks to the `toArray()` method.
-The ``GuzzleHttp\Cookie\CookieJarInterface`` interface extends
+The ``Guzzle6Http\Cookie\CookieJarInterface`` interface extends
 ``Traversable`` so it can be iterated in a foreach loop.
 
 
@@ -547,20 +547,20 @@ on each other.
 
 Guzzle throws exceptions for errors that occur during a transfer.
 
-- A ``GuzzleHttp\Exception\ConnectException`` exception is thrown in the
+- A ``Guzzle6Http\Exception\ConnectException`` exception is thrown in the
   event of a networking error. This exception extends from
-  ``GuzzleHttp\Exception\TransferException``.
+  ``Guzzle6Http\Exception\TransferException``.
 
-- A ``GuzzleHttp\Exception\ClientException`` is thrown for 400
+- A ``Guzzle6Http\Exception\ClientException`` is thrown for 400
   level errors if the ``http_errors`` request option is set to true. This
-  exception extends from ``GuzzleHttp\Exception\BadResponseException`` and
-  ``GuzzleHttp\Exception\BadResponseException`` extends from
-  ``GuzzleHttp\Exception\RequestException``.
+  exception extends from ``Guzzle6Http\Exception\BadResponseException`` and
+  ``Guzzle6Http\Exception\BadResponseException`` extends from
+  ``Guzzle6Http\Exception\RequestException``.
 
   .. code-block:: php
 
-      use GuzzleHttp\Psr7;
-      use GuzzleHttp\Exception\ClientException;
+      use Guzzle6Http\Psr7;
+      use Guzzle6Http\Exception\ClientException;
 
       try {
           $client->request('GET', 'https://github.com/_abc_123_404');
@@ -569,15 +569,15 @@ Guzzle throws exceptions for errors that occur during a transfer.
           echo Psr7\Message::toString($e->getResponse());
       }
 
-- A ``GuzzleHttp\Exception\ServerException`` is thrown for 500 level
+- A ``Guzzle6Http\Exception\ServerException`` is thrown for 500 level
   errors if the ``http_errors`` request option is set to true. This
-  exception extends from ``GuzzleHttp\Exception\BadResponseException``.
+  exception extends from ``Guzzle6Http\Exception\BadResponseException``.
 
-- A ``GuzzleHttp\Exception\TooManyRedirectsException`` is thrown when too
-  many redirects are followed. This exception extends from ``GuzzleHttp\Exception\RequestException``.
+- A ``Guzzle6Http\Exception\TooManyRedirectsException`` is thrown when too
+  many redirects are followed. This exception extends from ``Guzzle6Http\Exception\RequestException``.
 
 All of the above exceptions extend from
-``GuzzleHttp\Exception\TransferException``.
+``Guzzle6Http\Exception\TransferException``.
 
 
 Environment Variables

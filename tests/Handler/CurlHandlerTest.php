@@ -1,19 +1,19 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace Guzzle6Http\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\Promise\FulfilledPromise;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\Utils;
+use Guzzle6Http\Exception\ConnectException;
+use Guzzle6Http\Handler\CurlHandler;
+use Guzzle6Http\Promise\FulfilledPromise;
+use Guzzle6Http\Psr7;
+use Guzzle6Http\Psr7\Request;
+use Guzzle6Http\Psr7\Response;
+use Guzzle6Http\Tests\Server;
+use Guzzle6Http\Utils;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\CurlHandler
+ * @covers \Guzzle6Http\Handler\CurlHandler
  */
 class CurlHandlerTest extends TestCase
 {
