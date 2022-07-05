@@ -1,5 +1,5 @@
 {
-    "name": "Guzzle6Http/guzzle",
+    "name": "GuzzleHttp/guzzle",
     "description": "Guzzle is a PHP HTTP client library",
     "keywords": [
         "framework",
@@ -53,8 +53,8 @@
     "require": {
         "php": "^7.2.5 || ^8.0",
         "ext-json": "*",
-        "Guzzle6Http/promises": "^1.5",
-        "Guzzle6Http/psr7": "^1.9 || ^2.4",
+        "GuzzleHttp/promises": "^1.5",
+        "GuzzleHttp/psr7": "^1.9 || ^2.4",
         "psr/http-client": "^1.0",
         "symfony/deprecation-contracts": "^2.2 || ^3.0"
     },
